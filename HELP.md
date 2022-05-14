@@ -38,7 +38,7 @@ provided. As name suggests, it’s not a UI but backend.
 
 cd to path where application is downloaded/cloned.
 
--   cd market
+-   cd survey
 
 -   mvn clean install
 
