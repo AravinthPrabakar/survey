@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.market.logic.survey.app.unit.SurveyUnitTests
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.27 s - in com.market.logic.survey.app.unit.SurveyUnitTests

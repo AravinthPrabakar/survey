@@ -28,7 +28,7 @@ public class DataPlaneController {
     private final SurveyValidator validator;
 
     @Autowired
-    DataPlaneController(ManagerService managerService, SurveyValidator validator){
+    public DataPlaneController(ManagerService managerService, SurveyValidator validator){
         this.managerService = managerService;
         this.validator = validator;
     }

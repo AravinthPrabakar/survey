@@ -14,7 +14,7 @@ public class SurveyValidator{
     private final SurveyDao surveyDao;
 
     @Autowired
-    SurveyValidator(SurveyDao surveyDao){
+    public SurveyValidator(SurveyDao surveyDao){
         this.surveyDao = surveyDao;
     }
 
@@ -56,6 +56,10 @@ public class SurveyValidator{
 
     public Boolean isValid(String surveyId, Question question,boolean isCreated, List<String> validationErrors){
         isSurveyValid(surveyId,validationErrors);
+        if(question == null){
+            validationErrors.add("Question is empty");
+            return Boolean.FALSE;
+        }
         if(!isCreated && question.getQuestionId().isEmpty()){
             validationErrors.add("Question Id doesnt exist");
         }

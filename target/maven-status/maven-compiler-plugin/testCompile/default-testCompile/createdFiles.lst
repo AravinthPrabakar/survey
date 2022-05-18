@@ -1,1 +1,3 @@
+com/market/logic/survey/app/unit/SurveyUnitTests.class
+com/market/logic/survey/app/intg/SurveyIntegrationTest.class
 com/market/logic/survey/app/SurveyApplicationTests.class

@@ -29,7 +29,7 @@ public class ControlPlaneController {
     private final SurveyValidator validator;
 
     @Autowired
-    ControlPlaneController(AdminService adminService, SurveyValidator validator){
+    public ControlPlaneController(AdminService adminService, SurveyValidator validator){
         this.adminService = adminService;
         this.validator = validator;
     }
@@ -109,7 +109,9 @@ public class ControlPlaneController {
                                @RequestBody Question payload,
                                HttpServletResponse response) throws Exception {
         List<String> validationErrors = new ArrayList<>();
-        payload.setQuestionId(questionId);
+        if(payload !=null){
+            payload.setQuestionId(questionId);
+        }
         if(!validator.isValid(surveyId,payload,validationErrors)){
             LOGGER.info("Question payload received is invalid" + surveyId);
             throw new ValidationFailureException(validationErrors.toString());

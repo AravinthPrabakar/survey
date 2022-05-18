@@ -115,7 +115,10 @@ public class SurveyDaoImpl implements SurveyDao{
      */
     @Override
     public ResponseChart generateDistributionChart(String surveyId, String questionId) {
-        return dataManager.getSurvey(surveyId).getReport().get(questionId);
+        Survey survey = dataManager.getSurvey(surveyId);
+        ResponseChart response = survey.getReport().get(questionId);
+        response.setResponseCount(survey.getResponseCount().get());
+        return response;
     }
 
     /**

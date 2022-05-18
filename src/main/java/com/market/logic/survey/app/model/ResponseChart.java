@@ -24,6 +24,9 @@ public class ResponseChart {
     @JsonProperty("distribution")
     private ConcurrentHashMap<String, Long> distribution;
 
+    @JsonProperty("responseCount")
+    private Long responseCount;
+
     void processResponse(String option){
         distribution.computeIfPresent(option,(key,value)->value+1);
     }
